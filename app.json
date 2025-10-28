@@ -1,0 +1,78 @@
+{
+  "expo": {
+    "plugins": [
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "회원가입을 위해 제출할 사원증/명함 이미지를 위해 사진에 접근을 허용해 주세요.",
+          "savePhotosPermission": "회원가입을 위해 제출할 사원증/명함 이미지를 위해 사진 저장을 허용해 주세요.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "targetSdkVersion": 35
+          }
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "fade": false,
+          "image": "./assets/icon_1024.png",
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    ],
+    "name": "브랜드플레이스",
+    "slug": "brandkorea",
+    "version": "1.0.1",
+    "orientation": "portrait",
+    "icon": "./assets/icon_1024.png",    
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "buildNumber": "1.0.0",
+      "bundleIdentifier": "com.brandkorea.ios",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "회원가입을 위해 제출할 사원증/명함 이미지를 위해 사진에 접근을 허용해 주세요.",
+        "NSPhotoLibraryAddUsageDescription": "회원가입을 위해 제출할 사원증/명함 이미지를 위해 사진 저장을 허용해 주세요.",
+        "NSCameraUsageDescription": "회원가입을 위해 제출할 사원증/명함 이미지를 위해 카메라에 접근을 허용해 주세요."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "CAMERA",
+        "NOTIFICATIONS",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.ACCESS_MEDIA_LOCATION"
+      ],
+      "package": "com.brandkorea.android",
+      "googleServicesFile": "./google-services.json",
+      "versionCode": 22
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "44f952b2-0d83-4c04-9818-d433cd971780"
+      }
+    },
+    "runtimeVersion": "1.0.0",
+    "updates": {
+      "url": "https://u.expo.dev/44f952b2-0d83-4c04-9818-d433cd971780"
+    }
+  }
+}

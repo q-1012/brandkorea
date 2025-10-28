@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "336800624663",
+    "project_id": "ptalka01-2aba0",
+    "storage_bucket": "ptalka01-2aba0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336800624663:android:6f5653bd96f59d5b13ec52",
+        "android_client_info": {
+          "package_name": "com.brandkorea.android"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrIaKczQmtAWJKBdJMiXWESuMy6a9_rIg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336800624663:android:d8f2c156f6bac0c113ec52",
+        "android_client_info": {
+          "package_name": "com.brandkorea.android"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrIaKczQmtAWJKBdJMiXWESuMy6a9_rIg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
