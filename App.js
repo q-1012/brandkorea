@@ -286,7 +286,7 @@ export default function App() {
         style={styles.splashContainer}
       >
         <ImageBackground
-          source={require('./assets/splash2.png')}
+          source={require('./assets/splash1.png')}
           style={styles.fullScreenImage}
           onLoadEnd={onSplashLoaded}
         />
