@@ -51,19 +51,19 @@
       ],
       "package": "com.brandkorea.android",
       "googleServicesFile": "./google-services.json",
-      "versionCode": 22
+      "versionCode": 23
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "b4707dcc-f752-4382-a8a8-c449e5b86675"
+        "projectId": "95607d5b-63cd-4acf-95fe-e07cda4254d8"
       }
     },
     "runtimeVersion": "1.0.0",
     "updates": {
-      "url": "https://u.expo.dev/b4707dcc-f752-4382-a8a8-c449e5b86675"
+      "url": "https://u.expo.dev/95607d5b-63cd-4acf-95fe-e07cda4254d8"
     }
   }
 }
