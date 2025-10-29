@@ -6,7 +6,6 @@ import { View, ImageBackground, StyleSheet, Alert, Platform, BackHandler, ToastA
 import * as Notifications from "expo-notifications";
 import * as Device from "expo-device";
 import * as Linking from 'expo-linking';
-import * as SplashScreen from "expo-splash-screen";
 import * as MediaLibrary from 'expo-media-library';
 import * as ScreenCapture from 'expo-screen-capture';
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
@@ -26,12 +25,6 @@ const toastWithDurationHandler = () => {
   ToastAndroid.show("'뒤로' 버튼을  한번 더 누르시면 종료됩니다.", ToastAndroid.SHORT);
 };
 
-async function delay_splash() {
-  await SplashScreen.preventAutoHideAsync();
-  await sleep(1500);
-  await SplashScreen.hideAsync();
-}
-
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -39,10 +32,6 @@ function sleep(ms) {
 export default function App() {
 
   const defaultUri = 'https://m.brandkorea.info/account/signin';
-
-  //스플래시
-  const [appIsReady, setAppIsReady] = useState(false);
-  const [showSplasy, setshowSplasy] = useState(false);
 
   //스크린샷 방지
   ScreenCapture.preventScreenCaptureAsync();
@@ -83,20 +72,6 @@ export default function App() {
 
   useEffect(() => {
     let isMounted = true;
-
-    async function prepare() {
-      try {
-        // preventAutoHide는 반드시 await
-        await SplashScreen.preventAutoHideAsync();
-        // 스크린샷 방지 등 네이티브 호출은 여기서 안전하게 실행
-        await ScreenCapture.preventScreenCaptureAsync();
-        // 기타 초기 작업(푸시 토큰 등록 등)은 여기에 둬도 됨
-      } catch (e) {
-        console.warn('SplashScreen.prepare error', e);
-      }
-    }
-
-    prepare();
 
     //기본 uri 설정
     setNavUri('https://m.brandkorea.info/account/signin');
@@ -263,37 +238,6 @@ export default function App() {
     }
   }
 
-  // 이미지가 완전히 로드되면 즉시 숨기고 앱 진입
-  const onSplashLoaded = async () => {
-    try {
-      // hideAsync 호출 직후 바로 앱 진입
-      await SplashScreen.hideAsync();
-
-      // 2초 대기
-      await sleep(2000);
-    } catch (e) {
-      console.warn('SplashScreen.hideAsync error', e);
-    } finally {
-      setAppIsReady(true);
-      enableScreens(true); // 원래 의도대로 필요 시 활성화
-    }
-  };
-
-  if (!appIsReady) {
-    // 앱이 준비되는 동안 표시될 커스텀 스플래시 화면
-    return (
-      <View
-        style={styles.splashContainer}
-      >
-        <ImageBackground
-          source={require('./assets/splash1.png')}
-          style={styles.fullScreenImage}
-          onLoadEnd={onSplashLoaded}
-        />
-      </View>
-    );
-  }
-
   return (
     <SafeAreaProvider>
       <SafeAreaView
@@ -316,26 +260,3 @@ export default function App() {
     </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#ffffff",
-    paddingTop: Constants.statusBarHeight,
-  },
-  fullScreenImage: {
-    width: '100%',
-    height: '100%',
-    resizeMode: 'cover',
-  },
-  splashContainer: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    backgroundColor: '#fff',
-    zIndex: 9999,
-  },
-});
-

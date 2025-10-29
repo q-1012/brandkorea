@@ -16,15 +16,6 @@
             "targetSdkVersion": 35
           }
         }
-      ],
-      [
-        "expo-splash-screen",
-        {
-          "fade": false,
-          "image": "./assets/icon_1024.png",
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
-        }
       ]
     ],
     "name": "브랜드플레이스",
@@ -67,12 +58,12 @@
     },
     "extra": {
       "eas": {
-        "projectId": "44f952b2-0d83-4c04-9818-d433cd971780"
+        "projectId": "b4707dcc-f752-4382-a8a8-c449e5b86675"
       }
     },
     "runtimeVersion": "1.0.0",
     "updates": {
-      "url": "https://u.expo.dev/44f952b2-0d83-4c04-9818-d433cd971780"
+      "url": "https://u.expo.dev/b4707dcc-f752-4382-a8a8-c449e5b86675"
     }
   }
 }
