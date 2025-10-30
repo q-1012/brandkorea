@@ -15,7 +15,11 @@
       "channel": "preview"
     },
     "production": {
-      "android": {},
+      "android": {
+        "env": {
+          "EXPO_ARM64_PAGE_SIZE_16K": "true"
+        }
+      },
       "channel": "production"
     }
   },
